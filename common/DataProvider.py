@@ -34,7 +34,7 @@ class DataProvider(object):
     @classmethod
     def init_config_yaml(cls):
         filepath = os.path.abspath(os.path.join(os.path.dirname(__file__),"..")) + '/config/config.yaml'
-        with open(filepath, 'r') as stream:
+        with open(filepath, 'rb') as stream:
             try:
                 cls.config = yaml.load(stream)
             except yaml.YAMLError as exc:

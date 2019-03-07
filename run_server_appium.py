@@ -11,7 +11,6 @@ from Server.ServerManager import ServerManager
 def run():
     # 初始化日志配置
     Log.create_log_file()
-
     Log.logger.info(u"加载设备及用户配置信息")
     DataProvider.init_data()
 

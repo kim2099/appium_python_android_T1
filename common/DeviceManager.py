@@ -32,7 +32,7 @@ class DeviceManager(object):
         outstr = p.read()
         cls.connectdeviceid = re.findall(r'(\w+)\s+device\s',outstr)
         if 0 == len(cls.connectdeviceid):
-            Log.logger.warn(u'没有adb连接的设备')
+            Log.logger.info(u'没有adb连接的设备')
         else:
             return cls.connectdeviceid
 

@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 import logging
-import datetime
+import time
 import os
 import sys
 from logging.handlers import RotatingFileHandler
@@ -15,10 +15,11 @@ class Log(object):
 
     @classmethod
     def create_log_file(cls):
-        logfile = '%s/%s.log' % (os.path.abspath('./log'),get_format_currenttime())
-
+        logfile = '%s\%s.log' % (os.path.abspath('./log'), time.strftime('%Y-%m-%d_%H_%M_%S', time.localtime(time.time())))
+        #print(logfile)
         cls.logger = logging.getLogger(__name__)
-        cls.logger.setLevel(logging.DEBUG)
+        cls.logger.setLevel(int(20))
+
 
         # 文件handler
         filehandle = RotatingFileHandler(logfile, maxBytes=50*1024*1024, backupCount=5, encoding="UTF-8")
