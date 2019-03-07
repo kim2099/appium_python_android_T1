@@ -48,7 +48,7 @@ class RunTestManager(object):
             Log.logger.info(u"完成测试并退出所有Driver")
             # DriverManager.quit_all_driver()
             self.stop_run()
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             self.stop_run()
 
@@ -83,7 +83,7 @@ class RunTestManager(object):
 
             DataProvider.stoptime[tester.device.deviceid] = get_format_currenttime()
 
-        except Exception,e:
+        except Exception as e:
             Log.logger.info(u"设备：%s 出现异常" % tester.device.devicename)
             traceback.print_exc()
 
@@ -119,7 +119,7 @@ class RunTestManager(object):
 
             DriverManager.drivers[device.deviceid] = driver
             return testerobject
-        except Exception,e:
+        except Exception as e:
             Log.logger.info(u"设备：%s 出现异常" % device.devicename)
             traceback.print_exc()
 
@@ -134,7 +134,7 @@ class RunTestManager(object):
                 thread.start()
                 which_user = which_user + 1
                 threads.append(thread)
-            except Exception, e:
+            except Exception as e:
                 traceback.print_exc()
                 DataProvider.testers[deviceid].driver.quit()
 

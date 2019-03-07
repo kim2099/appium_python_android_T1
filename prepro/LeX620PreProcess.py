@@ -17,7 +17,7 @@ class LeX620PreProcess (BaseDevicePreProcess):
                 time.sleep(2)
 
             self.driver.launch_app()
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -41,7 +41,7 @@ class LeX620PreProcess (BaseDevicePreProcess):
             if element != None:
                 self.action.tap(element).perform()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -62,6 +62,6 @@ class LeX620PreProcess (BaseDevicePreProcess):
 
             # 退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

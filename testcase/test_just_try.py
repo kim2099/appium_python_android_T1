@@ -20,12 +20,12 @@ class test_longpress(BaseTestCase):
         pass
 
     def test_longpress_0(self):
-        print "美颜"
+        print ("美颜")
 
     def test_longpress_1(self):
         time.sleep(5)
         self.tester.back_to_feed()
-        print "返回feed"
+        print ("返回feed")
 
     # 主动skip case
     def test_longpress_2(self):
@@ -39,7 +39,7 @@ class test_longpress(BaseTestCase):
 
     def test_longpress_4(self):
         time.sleep(1)
-        print "End 4 ~~~~~"
+        print ("End 4 ~~~~~")
 
     def tearDown(self):
         pass

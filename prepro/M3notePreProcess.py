@@ -40,7 +40,7 @@ class M3notePreProcess (BaseDevicePreProcess):
             if element != None:
                 self.action.tap(element).perform()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -73,7 +73,7 @@ class M3notePreProcess (BaseDevicePreProcess):
             self.tester.find_element_by_id_and_tap('com.nice.main:id/login')
             time.sleep(5)
             self.tester.screenshot(u"登录成功")
-        except Exception,e:
+        except Exception as e:
             raise
 
     def login_success_process(self):
@@ -83,7 +83,7 @@ class M3notePreProcess (BaseDevicePreProcess):
             #联系人权限
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -104,6 +104,6 @@ class M3notePreProcess (BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

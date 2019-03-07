@@ -16,7 +16,7 @@ class RedMiNote2PreProcess (BaseDevicePreProcess):
                 time.sleep(2)
             self.driver.launch_app()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -25,7 +25,7 @@ class RedMiNote2PreProcess (BaseDevicePreProcess):
             Log.logger.info(u"设备：%s 登录成功后，处理各种自动弹窗" % self.tester.device.devicename)
             #联系人权限
             self.tester.find_element_by_id_and_tap('com.lbe.security.miui:id/accept')
-        except Exception,e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -41,6 +41,6 @@ class RedMiNote2PreProcess (BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

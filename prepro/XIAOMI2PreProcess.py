@@ -15,7 +15,7 @@ class XIAOMI2PreProcess (BaseDevicePreProcess):
                 time.sleep(2)
 
             self.driver.launch_app()
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -30,7 +30,7 @@ class XIAOMI2PreProcess (BaseDevicePreProcess):
             #授权联系人权限
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -52,7 +52,7 @@ class XIAOMI2PreProcess (BaseDevicePreProcess):
             # 退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

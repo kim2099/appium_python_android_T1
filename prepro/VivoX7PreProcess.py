@@ -35,7 +35,7 @@ class VivoX7ProPreProcess(BaseDevicePreProcess):
             time.sleep(7)
             self.tester.tap_screen(284, 1290)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -48,7 +48,7 @@ class VivoX7ProPreProcess(BaseDevicePreProcess):
             time.sleep(7)
             self.tester.tap_screen(316, 1315)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -70,7 +70,7 @@ class VivoX7ProPreProcess(BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

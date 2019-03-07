@@ -24,7 +24,7 @@ class HUAWEIVNSAL00PreProcess (BaseDevicePreProcess):
             # 已安装应用列表权限
             self.tester.find_element_by_id_and_tap('com.huawei.systemmanager:id/btn_allow')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -41,7 +41,7 @@ class HUAWEIVNSAL00PreProcess (BaseDevicePreProcess):
 
             Log.logger.info(u"设备：%s 没有成功授权通讯录" % self.tester.device.devicename)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -57,6 +57,6 @@ class HUAWEIVNSAL00PreProcess (BaseDevicePreProcess):
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
             time.sleep(1)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

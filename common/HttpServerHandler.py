@@ -1,9 +1,9 @@
 #!/usr/bin/python
 #-*- coding:utf-8 -*-
 
-import SimpleHTTPServer
+import http.server as SimpleHTTPServer
 from Log import Log
-import urlparse
+from urllib.parse import urlparse
 import threading
 import json
 import re
@@ -63,14 +63,14 @@ class HttpServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             thread.start()
             result_dict = {'code':0,"data":{"taskid fuck":"%s" % self.taskid,"message":"开始执行%s任务" % params['mode']}}
             self.set_response(result_dict)
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             get_run_manager().stop_run()
 
     def set_response(self, text, code=200):
         try:
             result = json.dumps(text, ensure_ascii=False)
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             result = text
         self.send_response(code)

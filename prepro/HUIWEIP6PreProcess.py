@@ -21,7 +21,7 @@ class HUAWEIP6PreProcess (BaseDevicePreProcess):
             #获取定位权限
             self.tester.find_element_by_id_and_tap('com.huawei.systemmanager:id/btn_allow')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -32,7 +32,7 @@ class HUAWEIP6PreProcess (BaseDevicePreProcess):
             #授权通讯录
             self.tester.find_element_by_id_and_tap('com.huawei.systemmanager:id/btn_allow')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -49,6 +49,6 @@ class HUAWEIP6PreProcess (BaseDevicePreProcess):
 
             time.sleep(1)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

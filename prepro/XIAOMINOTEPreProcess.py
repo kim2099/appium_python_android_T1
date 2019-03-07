@@ -28,7 +28,7 @@ class XIAOMINOTEPreProcess (BaseDevicePreProcess):
 
             self.driver.launch_app()
             #self.tester.find_element_by_id_and_tap('android:id/button2')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -43,7 +43,7 @@ class XIAOMINOTEPreProcess (BaseDevicePreProcess):
             #授权联系人权限
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -62,7 +62,7 @@ class XIAOMINOTEPreProcess (BaseDevicePreProcess):
 
             # 退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_close')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

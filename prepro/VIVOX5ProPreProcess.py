@@ -32,7 +32,7 @@ class VIVOX5ProPreProcess(BaseDevicePreProcess):
             time.sleep(3)
             self.tester.tap_screen(287, 1250)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -40,7 +40,7 @@ class VIVOX5ProPreProcess(BaseDevicePreProcess):
         Log.logger.info(u"设备：%s 登录成功后，处理各种自动弹窗" % self.tester.device.devicename)
         try:
             self.tester.find_element_by_id_and_tap('android:id/button1')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -59,7 +59,7 @@ class VIVOX5ProPreProcess(BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

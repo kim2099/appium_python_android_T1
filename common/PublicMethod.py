@@ -47,6 +47,6 @@ def clean_brackets_from_str(string):
 def read_file(filename, mode):
     f = open(filename, mode)  # filename，文件路径、名称，如果有\，注意转义或者开头加r，mode读取的模式，r读取，w写入，，
     read = f.read()  # 获取内容并储存在变量里
-    print read
+    print(read)
     f.close()  # 关闭文件，节省内存
 

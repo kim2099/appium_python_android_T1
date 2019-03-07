@@ -33,7 +33,7 @@ class MEIZU4PROPreProcess (BaseDevicePreProcess):
             #GPS权限
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -45,7 +45,7 @@ class MEIZU4PROPreProcess (BaseDevicePreProcess):
             #联系人权限
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -67,6 +67,6 @@ class MEIZU4PROPreProcess (BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

@@ -19,6 +19,7 @@ from PIL import Image
 from common.DataProvider import DataProvider
 from common.PublicMethod import *
 import traceback
+from functools import reduce
 
 PATH = lambda p: os.path.abspath(p)
 TEMP_FILE = PATH(tempfile.gettempdir() + "/temp_screen.png")
@@ -161,14 +162,14 @@ class Tester(object):
         self.logger.info(u"设备：%s 清理sd卡录制的mp4文件" % self.device.devicename)
         subprocess.Popen(clean_cmd, shell=True)
 
-        print 'clean done'
+        print('clean done')
 
     def find_element_by_id(self,eleid,timeout=120):
         self.logger.info(u"设备：%s start find :%s" % (self.device.devicename, eleid))
         try:
             element = self.wait_element_id_display(self.driver, eleid, eleid, timeout)
             return element
-        except Exception,e:
+        except Exception as e:
             self.logger.info(u"设备：%s 出现异常!" % self.device.devicename)
             traceback.print_exc()
             return None
@@ -185,7 +186,7 @@ class Tester(object):
                     for x in range(taptimes):
                         self.action.tap(element).perform()
                         self.logger.info(u"设备：%s tap success :%s " % (self.device.devicename, eleid))
-        except TimeoutException,e:
+        except TimeoutException as e:
             self.logger.info(u"设备：%s 出现异常!" % self.device.devicename)
             traceback.print_exc()
 
@@ -219,13 +220,13 @@ class Tester(object):
     def wait_element_id_display(self, driver, idstr, msg, timeout=200):
         try:
             return WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.ID, idstr)), msg)
-        except TimeoutException, e:
+        except TimeoutException as e:
             raise
 
     def wait_element_uiautormator_display(self, driver, uiselector, msg, timeout=200):
         try:
             return WebDriverWait(driver, timeout).until(lambda dr: dr.find_element_by_android_uiautomator(uiselector))
-        except TimeoutException, e:
+        except TimeoutException as e:
            raise
 
     def find_element_by_xpath_and_tap(self, xpath):
@@ -618,7 +619,7 @@ class Tester(object):
         code = strout.strip()
         self.logger.info(u"设备：%s 登陆验证码为:%s " % (self.device.devicename, code))
         if not code:
-            print "get vertifycode failed！！！"
+            print("get vertifycode failed！！！")
         return code
 
     def longin_with_verifycode(self):
@@ -654,7 +655,7 @@ class Tester(object):
             os.makedirs(dirPath)
         shutil.copyfile(TEMP_FILE, PATH(dirPath + "/" + imageName + "." + form))
 
-        print '截图成功'
+        print('截图成功')
 
     #通过指定元素截取图片相似度对比
     def get_screen_element_and_compare(self,eleid,image_path,percent=0):
@@ -686,10 +687,10 @@ class Tester(object):
         differ = math.sqrt(reduce(operator.add, list(map(lambda a, b: (a - b) ** 2, \
                                                          histogram1, histogram2))) / len(histogram1))
         if differ <= percent:
-            print '相似度匹配设定的百分比'
+            print('相似度匹配设定的百分比')
             return True
         else:
-            print '相似度不匹配设定的百分比'
+            print('相似度不匹配设定的百分比')
             return False
 
     #通过指定size区域截取图片相似度对比
@@ -718,10 +719,10 @@ class Tester(object):
         differ = math.sqrt(reduce(operator.add, list(map(lambda a, b: (a - b) ** 2, \
                                                          histogram1, histogram2))) / len(histogram1))
         if differ <= percent:
-            print '相似度匹配设定的百分比'
+            print('相似度匹配设定的百分比')
             return True
         else:
-            print '相似度不匹配设定的百分比'
+            print('相似度不匹配设定的百分比')
             return False
 
     def inputInt(self, strings):
@@ -803,7 +804,7 @@ class Tester(object):
         self.find_element_by_id_and_tap('com.nice.main:id/titlebar_next_btn')
         time.sleep(10)
         self.back_to_feed()
-        print "pub_nine_pic finished"
+        print("pub_nine_pic finished")
 
     def find_pub_nice_pic(self):
         text = "123456"
@@ -923,9 +924,9 @@ class Tester(object):
     @classmethod
     def is_exit_monkeyresultfile(cls):
         if os.path.exists(cls.monkey_log):
-            print 'monkey结果文件夹已存在'
+            print('monkey结果文件夹已存在')
         else:
-            print 'monkey结果文件夹不存在，自动创建'
+            print('monkey结果文件夹不存在，自动创建')
             os.mkdir(cls.monkey_log)
 
     @classmethod
@@ -961,7 +962,7 @@ class Tester(object):
     def read_log(self):
         #创建统计crash和anr结果的文件,并写入标题头
         monkey_total_result = self.monkey_result_path + "/Summary.txt"
-        print '文件名字为：%s ' % monkey_total_result
+        print('文件名字为：%s ' % monkey_total_result)
 
         init=open(monkey_total_result, 'a+')
         init_log=u'---------本次monkey测试结果统计--------\n'

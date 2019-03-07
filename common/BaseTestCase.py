@@ -5,7 +5,7 @@ import unittest
 import time
 import os
 import traceback
-from Log import *
+from common.Log import *
 
 
 class BaseTestCase(unittest.TestCase):

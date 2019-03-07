@@ -20,7 +20,7 @@ class SumSing9152PreProcess (BaseDevicePreProcess):
 
             #self.tester.find_element_by_uiautomator_and_tap(u'new UiSelector().textContains(\"允许\").fromParent(new UiSelector().className(\"android.widget.Button\"))')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -31,7 +31,7 @@ class SumSing9152PreProcess (BaseDevicePreProcess):
             # self.tester.find_element_by_uiautomator_and_tap(
             #     u'new UiSelector().textContains(\"允许\").fromParent(new UiSelector().className(\"android.widget.Button\"))')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -47,6 +47,6 @@ class SumSing9152PreProcess (BaseDevicePreProcess):
             self.tester.press_keycode(4)
 
             time.sleep(1)
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

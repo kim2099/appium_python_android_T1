@@ -38,7 +38,7 @@ class VIVOV3MAXPreProcess(BaseDevicePreProcess):
             time.sleep(7)
             self.tester.tap_screen(324, 1240)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -51,7 +51,7 @@ class VIVOV3MAXPreProcess(BaseDevicePreProcess):
 
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception,e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -70,6 +70,6 @@ class VIVOV3MAXPreProcess(BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

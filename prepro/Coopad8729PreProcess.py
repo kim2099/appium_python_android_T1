@@ -23,7 +23,7 @@ class Coopad8729PreProcess (BaseDevicePreProcess):
             if element != None:
                 self.action.tap(element).perform()
 
-        except Exception, e:
+        except Exception as e:
             Log.logger.info(u"设备：%s 没有找到GPS弹窗" % self.tester.device.devicename)
 
     def login_success_process(self):
@@ -33,7 +33,7 @@ class Coopad8729PreProcess (BaseDevicePreProcess):
             #获取联系人权限
             self.tester.find_element_by_id_and_tap('com.yulong.android.seccenter:id/alertdlg_allowed')
 
-        except Exception, e:
+        except Exception as e:
             Log.logger.info(u"设备：%s 没有找到联系人弹窗" % self.tester.device.devicename)
 
     def get_permission_process(self):
@@ -53,6 +53,6 @@ class Coopad8729PreProcess (BaseDevicePreProcess):
 
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

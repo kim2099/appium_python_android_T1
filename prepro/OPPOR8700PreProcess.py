@@ -20,7 +20,7 @@ class OPPOR8700PreProcess (BaseDevicePreProcess):
             self.tester.find_element_by_id_and_tap('oppo:id/remember_cb')
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -30,8 +30,8 @@ class OPPOR8700PreProcess (BaseDevicePreProcess):
             try:
                 self.tester.find_element_by_id_and_tap('android:id/button1')
             except:
-                print 'err'
-        except Exception, e:
+                print('err')
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -56,6 +56,6 @@ class OPPOR8700PreProcess (BaseDevicePreProcess):
             #退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

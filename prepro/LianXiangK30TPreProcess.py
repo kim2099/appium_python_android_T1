@@ -29,7 +29,7 @@ class LianXiangK30TPreProcess(BaseDevicePreProcess):
                 time.sleep(2)
             self.driver.launch_app()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -37,7 +37,7 @@ class LianXiangK30TPreProcess(BaseDevicePreProcess):
         try:
             Log.logger.info(u"设备：%s 登录成功后，处理各种自动弹窗" % self.tester.device.devicename)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -50,7 +50,7 @@ class LianXiangK30TPreProcess(BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

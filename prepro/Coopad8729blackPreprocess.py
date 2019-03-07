@@ -23,7 +23,7 @@ class Coopad8729blackPreprocess (BaseDevicePreProcess):
             if element != None:
                 self.action.tap(element).perform()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -34,7 +34,7 @@ class Coopad8729blackPreprocess (BaseDevicePreProcess):
             #获取联系人权限
             self.tester.find_element_by_id_and_tap('com.yulong.android.seccenter:id/alertdlg_allowed')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -54,6 +54,6 @@ class Coopad8729blackPreprocess (BaseDevicePreProcess):
 
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

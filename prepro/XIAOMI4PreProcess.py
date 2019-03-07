@@ -24,7 +24,7 @@ class XIAOMI4PreProcess (BaseDevicePreProcess):
 
             self.driver.launch_app()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -43,7 +43,7 @@ class XIAOMI4PreProcess (BaseDevicePreProcess):
     #
     #         self.tester.longin_with_verifycode()
     #         self.tester.screenshot(u"登录成功")
-    #     except Exception,e:
+    #     except Exception as e:
     #         raise
     #
 
@@ -61,7 +61,7 @@ class XIAOMI4PreProcess (BaseDevicePreProcess):
             if self.tester.is_element_exist('com.nice.main:id/btn_know'):
                 self.tester.find_element_by_id_and_tap('com.nice.main:id/btn_know')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -82,7 +82,7 @@ class XIAOMI4PreProcess (BaseDevicePreProcess):
 
             # 退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

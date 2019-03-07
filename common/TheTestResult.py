@@ -5,7 +5,10 @@ import sys
 
 from common.ApkBase import ApkInfo
 
-reload(sys)
+#reload(sys)
+import importlib,sys
+importlib.reload(sys)
+#import lib.reload(sys)
 sys.setdefaultencoding('utf-8')
 import unittest
 from pyh import *
@@ -36,7 +39,7 @@ class TheTestResult(unittest.TestResult):
         self.deviceid = self.tester.device.deviceid
         testcase_starttime = get_format_currenttime()
         self.logger.debug(u'设备：%s Start Run %s' % (self.tester.device.devicename, test))
-        print test.id()
+        print(test.id())
 
         #初始化每个设备总结果的数据结构
         if self.__class__.totalresults.has_key(self.deviceid):
@@ -119,7 +122,7 @@ class TheTestResult(unittest.TestResult):
         try:
             self.__class__.detailresults[self.deviceid][test]['result'] = 'Error'
             self.__class__.detailresults[self.deviceid][test]['reason'] = list_err
-        except Exception, e:
+        except Exception as e:
             info = Exception, ":", e
             self.logger.error(info)
 

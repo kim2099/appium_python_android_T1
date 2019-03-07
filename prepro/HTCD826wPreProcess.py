@@ -20,7 +20,7 @@ class HTCD826wPreProcess (BaseDevicePreProcess):
                 time.sleep(2)
 
             self.driver.launch_app()
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

@@ -27,5 +27,5 @@ class SumSingNote4PreProcess (SumSingNote3PreProcess):
             while self.tester.is_element_exist(u'手机号位数不对'):
                 self.tester.find_element_by_id('com.nice.main:id/phone_number')
 
-        except Exception,e:
+        except Exception as e:
             raise

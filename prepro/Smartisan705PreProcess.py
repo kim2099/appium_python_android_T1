@@ -20,7 +20,7 @@ class Smartisan705Process (BaseDevicePreProcess):
                 time.sleep(2)
 
             self.driver.launch_app()
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -28,7 +28,7 @@ class Smartisan705Process (BaseDevicePreProcess):
         try:
             Log.logger.info(u"设备：%s 登录成功后，处理各种自动弹窗" % self.tester.device.devicename)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -48,6 +48,6 @@ class Smartisan705Process (BaseDevicePreProcess):
 
             # 退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

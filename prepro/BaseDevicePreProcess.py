@@ -47,7 +47,7 @@ class BaseDevicePreProcess(object):
             time.sleep(3)
             self.tester.clean_mp4_file()     #预处理时清除sd的mp4文件
             Log.logger.info(u"设备：%s 预处理成功，开始执行测试用例" % self.tester.device.devicename)
-        except  Exception, e:
+        except  Exception as e:
             Log.logger.info(u"设备：%s 出现异常!" % self.tester.device.devicename)
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
@@ -107,7 +107,7 @@ class BaseDevicePreProcess(object):
             time.sleep(2)
 
             self.tester.screenshot(u"登录成功")
-        except Exception,e:
+        except Exception as e:
             raise
 
     # 该流程包括登录成功后，对各种自动弹出对话框进行处理
@@ -123,7 +123,7 @@ class BaseDevicePreProcess(object):
         self.tester.find_element_by_id_and_tap('com.nice.main:id/img_profile_avatar')
         time.sleep(3)
         if self.tester.is_element_exist('编辑头像'):
-            print '该用户未添加头像'
+            print('该用户未添加头像')
             self.tester.find_element_by_id_and_tap('com.nice.main:id/img_publish_photo')
             time.sleep(3)
             if self.tester.is_element_exist('com.nice.main:id/image'):
@@ -136,7 +136,7 @@ class BaseDevicePreProcess(object):
                 self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
                 self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
         else:
-            print '该用户已添加头像'
+            print('该用户已添加头像')
             self.tester.find_element_by_id_and_tap('com.nice.main:id/profile_black')
 
     # 创建autotest文件夹并生成测试图片

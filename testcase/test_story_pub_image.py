@@ -135,7 +135,7 @@ class test_story_pub_image(BaseTestCase):
                 try:
                     self.tester.driver.find_element_by_id('com.nice.main:id/img_return').click()
                 except:
-                    print "try to tap close button failed"
+                    print ("try to tap close button failed")
                 self.tester.stop_screen_record(u'story检查前置拍摄的故事')
             else:
                 self.tester.stop_screen_record(u'story检查前置拍摄的故事')
@@ -221,7 +221,7 @@ class test_story_pub_image(BaseTestCase):
                 try:
                     self.tester.driver.find_element_by_id('com.nice.main:id/img_return').click()
                 except:
-                    print "try to tap close button failed"
+                    print ("try to tap close button failed")
                 self.tester.stop_screen_record(u'story检查前置拍摄的故事')
             else:
                 self.tester.stop_screen_record(u'story检查前置拍摄的故事')
@@ -339,7 +339,7 @@ class test_story_pub_image(BaseTestCase):
                 try:
                     self.tester.driver.find_element_by_id('com.nice.main:id/img_return').click()
                 except:
-                    print "try to tap close button failed"
+                    print ("try to tap close button failed")
                 self.tester.stop_screen_record(u'story检查非音乐滤镜拍摄的故事')
             else:
                 self.tester.stop_screen_record(u'story检查非音乐滤镜拍摄的故事')
@@ -423,7 +423,7 @@ class test_story_pub_image(BaseTestCase):
                 try:
                     self.tester.driver.find_element_by_id('com.nice.main:id/img_return').click()
                 except:
-                    print "try to tap close button failed"
+                    print ("try to tap close button failed")
                 self.tester.stop_screen_record(u'story检查音乐滤镜拍摄的故事')
             else:
                 self.tester.stop_screen_record(u'story检查音乐滤镜拍摄的故事')

@@ -20,7 +20,7 @@ class OPPON5207PreProcess (BaseDevicePreProcess):
             self.tester.find_element_by_id_and_tap('oppo:id/remember_cb')
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -29,7 +29,7 @@ class OPPON5207PreProcess (BaseDevicePreProcess):
             Log.logger.info(u"设备：%s 登录成功后，处理各种自动弹窗" % self.tester.device.devicename)
             self.tester.find_element_by_id_and_tap('android:id/button1')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -53,6 +53,6 @@ class OPPON5207PreProcess (BaseDevicePreProcess):
             #退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

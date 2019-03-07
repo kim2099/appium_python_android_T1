@@ -2,9 +2,11 @@
 # -*- coding:utf-8 -*-
 
 from common.HttpServerHandler import *
-from SocketServer import ThreadingTCPServer
+from socketserver import ThreadingTCPServer
 from common.Log import *
 from Server.Server import *
+from common.DeviceManager import *
+from common.DataProvider import *
 
 def kill_server(port):
     cmd = "lsof -i:%s|awk 'NR==2{print $2}'" % port

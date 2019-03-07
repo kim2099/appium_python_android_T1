@@ -1,7 +1,11 @@
 #!usr/bin/python
 # -*- coding:utf-8 -*-
-
-from BaseDevicePreProcess import *
+import BaseDevicePreProcess
+from common.Log import *
+import time
+import traceback
+from common import DriverManager
+from common.DeviceManager import *
 
 class ASUSZ00APreProcessPreProcess (BaseDevicePreProcess):
 
@@ -24,7 +28,7 @@ class ASUSZ00APreProcessPreProcess (BaseDevicePreProcess):
                 self.tester.tap_screen(155, 1065)
                 self.action.tap(element).perform()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -38,7 +42,7 @@ class ASUSZ00APreProcessPreProcess (BaseDevicePreProcess):
                 self.tester.tap_screen(191, 1063)
                 self.action.tap(element).perform()
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -64,6 +68,6 @@ class ASUSZ00APreProcessPreProcess (BaseDevicePreProcess):
             # 退出取景框，回到发现页面
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

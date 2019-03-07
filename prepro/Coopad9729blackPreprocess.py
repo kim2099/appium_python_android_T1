@@ -21,7 +21,7 @@ class Coopad9729blackPreprocess (BaseDevicePreProcess):
             #处理获取地理位置弹框
             self.tester.find_element_by_id_and_tap('com.yulong.android.seccenter:id/alertdlg_allowed')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -32,7 +32,7 @@ class Coopad9729blackPreprocess (BaseDevicePreProcess):
             #获取联系人权限
             self.tester.find_element_by_id_and_tap('com.yulong.android.seccenter:id/alertdlg_allowed')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -50,6 +50,6 @@ class Coopad9729blackPreprocess (BaseDevicePreProcess):
 
             self.tester.press_keycode(4)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

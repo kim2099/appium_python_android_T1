@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
-from aetypes import template
+#from aetypes import template
 
 import yaml
 from common.Log import *
@@ -38,8 +38,8 @@ class DataProvider(object):
             try:
                 cls.config = yaml.load(stream)
             except yaml.YAMLError as exc:
-                print 'yaml读取有误'
-                print exc
+                print('yaml读取有误')
+                print(exc)
             finally:
                 stream.close()
 
@@ -76,10 +76,10 @@ class DataProvider(object):
     def show_devicename_list(cls):
         for i in range(len(cls.devicenamelist)):
             if i % 10 == 0:
-                print cls.devicenamelist[i] + ','
+                print(cls.devicenamelist[i] + ',')
                 i += 1
             else:
-                print cls.devicenamelist[i] + ',',
+                print(cls.devicenamelist[i] + ',')
                 i += 1
 
 if __name__ == "__main__":

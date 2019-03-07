@@ -12,7 +12,7 @@ class OPPOR9PreProcess(BaseDevicePreProcess):
         Log.logger.info(u"设备：%s 处理安装中各种弹窗" % self.tester.device.devicename)
         try:
             self.tester.find_element_by_id_and_tap('com.android.packageinstaller:id/btn_allow_once',60)
-        except TimeoutException,e:
+        except TimeoutException as e:
             traceback.print_exc()
         finally:
             try:
@@ -20,7 +20,7 @@ class OPPOR9PreProcess(BaseDevicePreProcess):
                 self.tester.find_element_by_id_and_tap('com.android.packageinstaller:id/bottom_button_two')
                 self.tester.find_element_by_id_and_tap('oppo:id/remember_cb')
                 self.tester.find_element_by_id_and_tap('android:id/button1')
-            except Exception, e:
+            except Exception as e:
                 traceback.print_exc()
                 DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -29,7 +29,7 @@ class OPPOR9PreProcess(BaseDevicePreProcess):
         try:
             self.tester.find_element_by_id_and_tap('android:id/button1')
             self.tester.find_element_by_id_and_tap('com.nice.main:id/btn_cancel')
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -50,7 +50,7 @@ class OPPOR9PreProcess(BaseDevicePreProcess):
             #关闭取景框
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

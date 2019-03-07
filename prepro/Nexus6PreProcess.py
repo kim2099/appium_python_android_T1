@@ -15,7 +15,7 @@ class Nexus6PreProcess(BaseDevicePreProcess):
                 time.sleep(2)
 
             self.driver.launch_app()
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -36,7 +36,7 @@ class Nexus6PreProcess(BaseDevicePreProcess):
             # 系统的授权弹窗
             self.tester.find_element_by_id_and_tap('com.android.packageinstaller:id/permission_allow_button')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -82,9 +82,9 @@ class Nexus6PreProcess(BaseDevicePreProcess):
                     self.tester.find_element_by_xpath_and_tap('//android.widget.TextView[2]')
                     self.tester.back_to_feed()
             else:
-                print 'nexus6目前是简体中文'
+                print('nexus6目前是简体中文')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 

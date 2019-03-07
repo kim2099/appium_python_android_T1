@@ -38,7 +38,7 @@ class HuaWeiG9PreProcess (BaseDevicePreProcess):
             time.sleep(3)
             self.tester.clean_mp4_file()  # 预处理时清除sd的mp4文件
             Log.logger.info(u"设备：%s 预处理成功，开始执行测试用例" % self.tester.device.devicename)
-        except  Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
             return False
@@ -54,8 +54,8 @@ class HuaWeiG9PreProcess (BaseDevicePreProcess):
             elif self.tester.is_element_exist('com.android.packageinstaller:id/ok_button',10) == True:
                 self.tester.find_element_by_id_and_tap('com.android.packageinstaller:id/ok_button')
             else :
-                print 'error!'
-        except Exception, e:
+                print('error!')
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
             # 该流程包括点击login按钮到达登录页面，并登录
@@ -83,7 +83,7 @@ class HuaWeiG9PreProcess (BaseDevicePreProcess):
 
             time.sleep(1)
             self.tester.screenshot(u"登录成功")
-        except Exception, e:
+        except Exception as e:
             raise
 
     def login_success_process(self):
@@ -110,7 +110,7 @@ class HuaWeiG9PreProcess (BaseDevicePreProcess):
             if self.tester.is_element_exist('com.nice.main:id/btn_know'):
                 self.tester.find_element_by_id_and_tap('com.nice.main:id/btn_know')
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)
 
@@ -133,6 +133,6 @@ class HuaWeiG9PreProcess (BaseDevicePreProcess):
             self.tester.find_element_by_id_and_tap('com.nice.main:id/titlebar_return')
             time.sleep(1)
 
-        except Exception, e:
+        except Exception as e:
             traceback.print_exc()
             DriverManager.quit_driver(self.tester.device.deviceid)

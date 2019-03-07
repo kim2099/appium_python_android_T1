@@ -57,7 +57,7 @@ class DeviceManager(object):
             response = None
             try:
                 response = requests.request("get", url)
-            except requests.RequestException,e:
+            except requests.RequestException as e:
                 pass
             if response != None:
                 cls.serverdevices[deviceid] = device
@@ -70,8 +70,8 @@ class DeviceManager(object):
             cmd = "adb -s %s shell service call iphonesubinfo 1 | awk -F \"'\" '{print $2}' | sed '1 d' | tr -d '.' | awk '{print}' ORS=" % device
             p = os.popen(cmd)
             outstr = p.read()
-            print device,
-            print outstr
+            print(device)
+            print(outstr)
 
     @classmethod
     def get_device_info(cls, deviceId):
@@ -83,8 +83,8 @@ class DeviceManager(object):
         p2 = os.popen(getrelease)
         modename = p1.read()
         releasename = p2.read()
-        print deviceId
-        print modename, releasename
+        print(deviceId)
+        print(modename, releasename)
 
 
 if __name__ == "__main__":

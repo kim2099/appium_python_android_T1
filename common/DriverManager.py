@@ -8,10 +8,10 @@ class DriverManager(object):
     #退出所有的Driver
     @classmethod
     def quit_all_driver(cls):
-        print cls.drivers
+        print (cls.drivers)
         for deviceid,driver in cls.drivers.iteritems():
             if driver != None:
-                print driver
+                print (driver)
                 driver.quit()
 
     #根据deviceid退出相应的Driver
