@@ -18,7 +18,7 @@ class Log(object):
         logfile = '%s\%s.log' % (os.path.abspath('./log'), time.strftime('%Y-%m-%d_%H_%M_%S', time.localtime(time.time())))
         #print(logfile)
         cls.logger = logging.getLogger(__name__)
-        cls.logger.setLevel(int(20))
+        cls.logger.setLevel(logging.DEBUG)
 
 
         # 文件handler
