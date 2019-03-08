@@ -16,8 +16,8 @@ class ServerManager:
         self.logger = Log.logger
 
     def start_all_server(self):
-        for deviceid,device in self.testdevices.iteritems():
-            server = Server(device)
+        for deviceid,device in self.testdevices.items():
+            server = server(device)
             self.serverobjects.append(server)
             thread1 = threading.Thread(target=server.start)
             thread1.start()
@@ -30,7 +30,7 @@ class ServerManager:
         info = u"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~已连接的设备~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
         for deviceid,device in self.testdevices.iteritems():
-            server = Server(device)
+            server = server(device)
             server.list_connect_devices()
         info = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
@@ -39,7 +39,7 @@ class ServerManager:
         info = u"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~丢失的设备~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
         for deviceid, device in self.disconnectdevices.iteritems():
-            server = Server(device)
+            server = server(device)
             server.list_disconnect_devices()
         info = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)

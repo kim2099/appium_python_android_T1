@@ -3,7 +3,7 @@
 import os
 import re
 from DataProvider import *
-from Log import *
+import log
 import requests
 
 
@@ -32,7 +32,7 @@ class DeviceManager(object):
         outstr = p.read()
         cls.connectdeviceid = re.findall(r'(\w+)\s+device\s',outstr)
         if 0 == len(cls.connectdeviceid):
-            Log.logger.info(u'没有adb连接的设备')
+            Log.logger.warn(u'没有adb连接的设备')
         else:
             return cls.connectdeviceid
 
@@ -52,7 +52,7 @@ class DeviceManager(object):
     # 客户端用来获取server上已经建立好服务的设备
     @classmethod
     def get_server_test_device(cls):
-        for deviceid,device in DataProvider.devices.iteritems():
+        for deviceid,device in DataProvider.devices.items():
             url = "http://%s:%s/wd/hub" % (device.server,device.serverport)
             response = None
             try:

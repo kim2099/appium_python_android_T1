@@ -1,13 +1,13 @@
 #!usr/bin/python
 # -*- coding:utf-8 -*-
-import BaseDevicePreProcess
+from BaseDevicePreProcess import *
 from common.Log import *
 import time
 import traceback
 from common import DriverManager
 from common.DeviceManager import *
 
-class ASUSZ00APreProcessPreProcess (BaseDevicePreProcess):
+class ASUSZ00APreProcessPreProcess(BaseDevicePreProcess):
 
     def __init__(self, tester):
         super(ASUSZ00APreProcessPreProcess, self).__init__(tester)

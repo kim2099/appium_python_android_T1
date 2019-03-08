@@ -9,7 +9,7 @@ from common.ApkBase import ApkInfo
 import importlib,sys
 importlib.reload(sys)
 #import lib.reload(sys)
-sys.setdefaultencoding('utf-8')
+#sys.setdefaultencoding('utf-8')
 import unittest
 from pyh import *
 import collections
@@ -17,6 +17,7 @@ from datetime import datetime
 import traceback
 from DriverManager import *
 from DataProvider import *
+import codecs
 
 
 class TheTestResult(unittest.TestResult):

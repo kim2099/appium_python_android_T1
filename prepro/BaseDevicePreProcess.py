@@ -17,7 +17,7 @@ from model.Tester import *
 import subprocess
 
 
-class BaseDevicePreProcess(object):
+class BaseDevicePreProcess:
 
     def __init__(self, tester):
         self.tester = tester
