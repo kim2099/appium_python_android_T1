@@ -7,7 +7,7 @@ import re
 
 
 def get_format_currenttime():
-    currenttime = datetime.datetime.now().strftime("%Y_%m_%d_%H:%M:%S")
+    currenttime = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     return currenttime
 
 

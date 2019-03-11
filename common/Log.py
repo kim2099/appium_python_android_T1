@@ -15,7 +15,7 @@ class Log(object):
 
     @classmethod
     def create_log_file(cls):
-        logfile = '%s\%s.log' % (os.path.abspath('./log'), time.strftime('%Y-%m-%d_%H_%M_%S', time.localtime(time.time())))
+        logfile = '%s\%s.log' % (os.path.abspath('./log'), get_format_currenttime())
         #print(logfile)
         cls.logger = logging.getLogger(__name__)
         cls.logger.setLevel(logging.DEBUG)

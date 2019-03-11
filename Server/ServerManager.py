@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from common.Log import *
-from Server import *
+from Server.Server import *
 from common.DeviceManager import *
 import threading
 
@@ -17,7 +17,7 @@ class ServerManager:
 
     def start_all_server(self):
         for deviceid,device in self.testdevices.items():
-            server = server(device)
+            server = Server(device)
             self.serverobjects.append(server)
             thread1 = threading.Thread(target=server.start)
             thread1.start()
@@ -30,7 +30,7 @@ class ServerManager:
         info = u"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~已连接的设备~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
         for deviceid,device in self.testdevices.iteritems():
-            server = server(device)
+            server = Server(device)
             server.list_connect_devices()
         info = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
@@ -39,7 +39,7 @@ class ServerManager:
         info = u"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~丢失的设备~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
         for deviceid, device in self.disconnectdevices.iteritems():
-            server = server(device)
+            server = Server(device)
             server.list_disconnect_devices()
         info = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         self.logger.info(info)
